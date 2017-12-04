@@ -1,5 +1,5 @@
 const test = require('ava')
-const filterString = require('../lib')
+const filterString = require('../src')
 
 test('Should be parsed rightly', t => {
   // normally
@@ -54,4 +54,23 @@ test('Should be stringified rightly', t => {
   }]
   const $filter2 = filterString.stringify(filters2)
   t.is('a eq xxx zzz and b gt yyy', $filter2)
+})
+
+test('Should throw error if Logic Operator not support', t => {
+  try {
+    filterString.stringify([{
+      key: 'a',
+      op: 'eq',
+      value: 'xxx zzz'
+    }, {
+      key: 'b',
+      op: 'gt',
+      value: 'yyy'
+    }], {
+      op: 'xxx'
+    })
+    t.fail()
+  } catch (error) {
+    t.pass()
+  }
 })

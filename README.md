@@ -8,6 +8,7 @@
 [![bitHound Overall Score](https://www.bithound.io/github/kagawagao/filter-string/badges/score.svg)](https://www.bithound.io/github/kagawagao/filter-string)
 [![bitHound Dependencies](https://www.bithound.io/github/kagawagao/filter-string/badges/dependencies.svg)](https://www.bithound.io/github/kagawagao/filter-string/master/dependencies/npm)
 [![bitHound Dev Dependencies](https://www.bithound.io/github/kagawagao/filter-string/badges/devDependencies.svg)](https://www.bithound.io/github/kagawagao/filter-string/master/dependencies/npm)
+[![Coveralls github](https://img.shields.io/coveralls/github/kagawagao/filter-string.svg)]()
 
 Parse and stringify RESTFul filter string
 

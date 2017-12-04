@@ -4,7 +4,7 @@ import uglify from 'rollup-plugin-uglify'
 
 export default {
   input: 'src/index.js',
-  name: 'FilterString',
+  name: 'filterString',
   output: {
     format: 'iife',
     file: 'dist/filter-string.min.js'
