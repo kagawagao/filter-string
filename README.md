@@ -1,16 +1,25 @@
 # filter-string
 
+[![node](https://img.shields.io/node/v/filter-string.svg)]()
+[![npm](https://img.shields.io/npm/v/filter-string.svg)](https://www.npmjs.com/package/filter-string)
+[![license](https://img.shields.io/npm/l/filter-string.svg)](https://github.com/kagawagao/filter-string/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/kagawagao/filter-string.svg?branch=master)](https://travis-ci.org/kagawagao/filter-string)
+[![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](http://standardjs.com/)
+[![bitHound Overall Score](https://www.bithound.io/github/kagawagao/filter-string/badges/score.svg)](https://www.bithound.io/github/kagawagao/filter-string)
+[![bitHound Dependencies](https://www.bithound.io/github/kagawagao/filter-string/badges/dependencies.svg)](https://www.bithound.io/github/kagawagao/filter-string/master/dependencies/npm)
+[![bitHound Dev Dependencies](https://www.bithound.io/github/kagawagao/filter-string/badges/devDependencies.svg)](https://www.bithound.io/github/kagawagao/filter-string/master/dependencies/npm)
+
 Parse and stringify RESTFul filter string
 
-# Install
+## Install
 
 ```bash
 npm install filter-string
 ```
 
-# Use
+## Use
 
-## Stringify
+### Stringify
 
 ```javascript
 import { stringify } from 'filter-string'
@@ -33,7 +42,7 @@ const $filter = stringify(filters, {
 // a eq xxx and b gt yyy
 ```
 
-## Parse
+### Parse
 
 ```javascript
 import { parse } from 'filter-string'
@@ -52,4 +61,24 @@ const filters = parse($filter)
 //   op: 'gt',
 //   value: 'yyy'
 // }]
+```
+
+## Development
+
+- Install packages
+
+```bash
+npm install
+```
+
+- Build for publish
+
+```bash
+npm run build
+```
+
+- Run test
+
+```bash
+npm run test
 ```
