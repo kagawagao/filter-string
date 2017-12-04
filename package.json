@@ -4,6 +4,10 @@
   "description": "Parse and stringify RESTFul filter string",
   "main": "lib/index.js",
   "module": "src/index.js",
+  "files": [
+    "lib",
+    "es"
+  ],
   "scripts": {
     "flow": "flow",
     "lint": "eslint ./src",
