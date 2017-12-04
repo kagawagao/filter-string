@@ -11,3 +11,4 @@ es/
 # coverage
 .nyc_output/
 coverage/
+.coveralls.yml

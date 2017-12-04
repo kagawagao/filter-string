@@ -12,7 +12,7 @@
     "test": "cross-env NODE_ENV=test && nyc ava --verbose",
     "flow": "flow",
     "lint": "eslint ./src",
-    "coverage": "nyc report --reporter=text-lcov | coverall",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "prebuild": "npm run flow && npm run lint",
     "build": "cross-env NODE_ENV=production && npm run compile && npm run compile:es && rollup -c",
     "compile": "babel src -d lib --presets=env,stage-0,flow --plugins=add-module-exports",
