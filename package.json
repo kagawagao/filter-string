@@ -2,9 +2,16 @@
   "name": "filter-string",
   "version": "0.1.0-alpha.1",
   "description": "Parse and stringify RESTFul filter string",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "module": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "flow": "flow",
+    "lint": "eslint ./src",
+    "prebuild": "npm run flow && npm run lint",
+    "build": "NODE_ENV=production && npm run compile && npm run compile:es && rollup -c",
+    "compile": "babel src -d lib --presets=env,stage-0,flow --plugins=add-module-exports",
+    "compile:es": "babel src -d es",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -22,5 +29,26 @@
   "bugs": {
     "url": "https://github.com/kagawagao/filter-string/issues"
   },
-  "homepage": "https://github.com/kagawagao/filter-string#readme"
+  "homepage": "https://github.com/kagawagao/filter-string#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.0.3",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^4.12.1",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-flowtype": "^2.39.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "flow-bin": "^0.60.1",
+    "rollup": "^0.52.0",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-uglify": "^2.0.1"
+  },
+  "dependencies": {}
 }

@@ -1,0 +1,9 @@
+# Packages
+node_modules/
+
+# Mac
+.DS_STORE
+
+# build
+lib/
+es/
