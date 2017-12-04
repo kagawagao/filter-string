@@ -1,0 +1,26 @@
+{
+  "name": "filter-string",
+  "version": "0.1.0-alpha.1",
+  "description": "Parse and stringify RESTFul filter string",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kagawagao/filter-string.git"
+  },
+  "keywords": [
+    "parser",
+    "stringify",
+    "restful",
+    "query",
+    "filter"
+  ],
+  "author": "kagawagao <kingsongao1221@gmail.com> (http://kingsongao.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kagawagao/filter-string/issues"
+  },
+  "homepage": "https://github.com/kagawagao/filter-string#readme"
+}

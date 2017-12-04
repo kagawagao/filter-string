@@ -1,2 +1,2 @@
-# filter-strting
-Parse and stringify RESTFul filter strting
+# filter-string
+Parse and stringify RESTFul filter string
