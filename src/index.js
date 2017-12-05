@@ -8,6 +8,9 @@ const defaultOpts: Option = {
 }
 
 export const stringify = (filters: Array<Filter>, options: Option = {}): string => {
+  if (!filters) {
+    return ''
+  }
   const opts = {
     ...defaultOpts,
     ...options
@@ -25,6 +28,9 @@ export const stringify = (filters: Array<Filter>, options: Option = {}): string 
 }
 
 export const parse = (filter: string): Array<Filter> => {
+  if (!filter) {
+    return []
+  }
   const filters = []
   const temp: Filter = {
     key: '',
