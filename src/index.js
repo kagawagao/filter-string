@@ -15,7 +15,7 @@ export const stringify = (filters: Array<Filter>, options: Option = {}): string 
 
   const { op: logicOp } = opts
 
-  if (!LOGIC_OPERATORS.includes(logicOp)) {
+  if (!LOGIC_OPERATORS.find(op => op === logicOp)) {
     throw new TypeError(`Invalid Logic Operator, it should be one of ${LOGIC_OPERATORS.toString()}`)
   }
 

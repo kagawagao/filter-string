@@ -13,7 +13,7 @@
     "flow": "flow",
     "lint": "eslint ./src",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "prebuild": "npm run flow && npm run lint",
+    "prebuild": "npm run flow && npm run lint && npm run test",
     "build": "cross-env NODE_ENV=production && npm run compile && npm run compile:es && rollup -c",
     "compile": "babel src -d lib --presets=env,stage-0,flow --plugins=add-module-exports",
     "compile:es": "babel src -d es",
