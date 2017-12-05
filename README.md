@@ -64,6 +64,18 @@ const filters = parse($filter)
 // }]
 ```
 
+### Needed polyfill
+
+```javascript
+Array.prototype.filter
+```
+
+```javascript
+Array.prototype.find
+```
+
+> FYI: You should add polyfill by yourself if need
+
 ## Development
 
 - Install packages

@@ -3,7 +3,7 @@
   "version": "0.1.2",
   "description": "Parse and stringify RESTFul filter string",
   "main": "lib/index.js",
-  "module": "src/index.js",
+  "module": "es/index.js",
   "files": [
     "lib",
     "es"
@@ -13,7 +13,7 @@
     "flow": "flow",
     "lint": "eslint ./src",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "prebuild": "npm run flow && npm run lint && npm run test",
+    "prepublishOnly": "npm run flow && npm run lint && npm run test",
     "build": "cross-env NODE_ENV=production && npm run compile && npm run compile:es && rollup -c",
     "compile": "babel src -d lib --presets=env,stage-0,flow --plugins=add-module-exports",
     "compile:es": "babel src -d es",
@@ -82,5 +82,8 @@
     "sourceMap": false,
     "instrument": false
   },
-  "browserslist": "ie >= 10, last 2 Chrome versions, last 2 Firefox versions"
+  "browserslist": "ie >= 10, last 2 Chrome versions, last 2 Firefox versions",
+  "peerDependencies": {
+    "core-js": "^2.5.1"
+  }
 }
