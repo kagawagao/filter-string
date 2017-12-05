@@ -7,8 +7,7 @@
           {
             "modules": false,
             "target": {
-              "node": 4,
-              "browsers": "ie >= 10, last 2 Chrome versions, last 2 Firefox versions"
+              "node": 4
             }
           }
         ],
