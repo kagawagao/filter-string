@@ -2,7 +2,7 @@ declare type LogicOperator = 'and' | 'or';
 
 declare type Filter = {
   key: string | '',
-  op: string | Operator | '',
+  op: string,
   value: '' | string
 };
 
