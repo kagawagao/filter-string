@@ -1,4 +1,4 @@
-declare type Operator = 'eq' | 'gt' | 'ge' | 'lt' | 'le' | 'ne';
+declare type Operator = 'eq' | 'gt' | 'ge' | 'lt' | 'le' | 'ne' | 'ni' | 'in';
 
 declare type LogicOperator = 'and' | 'or';
 
