@@ -5,6 +5,10 @@ const defaultOpts: Option = {
   op: 'and'
 }
 
+const isValid = (str: any): boolean => {
+  return str !== undefined && str !== null && str !== ''
+}
+
 export const stringify = (filters: Array<Filter>, options: Option = {}): string => {
   if (!filters) {
     return ''
@@ -22,7 +26,7 @@ export const stringify = (filters: Array<Filter>, options: Option = {}): string 
 
   const joiner: string = ` ${logicOp} `
 
-  return filters.map(({ key, value, op }) => `${key} ${op} ${value}`).join(joiner)
+  return filters.filter(({key, op, value}) => isValid(key) && isValid(op) && isValid(value)).map(({ key, value, op }) => `${key} ${op} ${value}`).join(joiner)
 }
 
 export const parse = (filter: string): Array<Filter> => {
