@@ -1,5 +1,5 @@
 // @flow
-const OPERATORS: Array<Operator> = ['eq', 'gt', 'ge', 'lt', 'le', 'ne', 'in', 'ni']
+const OPERATORS: Array<Operator> = ['eq', 'gt', 'ge', 'lt', 'le', 'ne', 'in', 'ni', 'like']
 
 const LOGIC_OPERATORS: Array<LogicOperator> = ['and', 'or']
 
