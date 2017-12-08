@@ -1,6 +1,4 @@
 // @flow
-const OPERATORS: Array<Operator> = ['eq', 'gt', 'ge', 'lt', 'le', 'ne', 'in', 'ni', 'like']
-
 const LOGIC_OPERATORS: Array<LogicOperator> = ['and', 'or']
 
 const defaultOpts: Option = {
@@ -24,7 +22,7 @@ export const stringify = (filters: Array<Filter>, options: Option = {}): string 
 
   const joiner: string = ` ${logicOp} `
 
-  return filters.filter(({ op }) => OPERATORS.find(operator => op === operator)).map(({ key, value, op }) => `${key} ${op} ${value}`).join(joiner)
+  return filters.map(({ key, value, op }) => `${key} ${op} ${value}`).join(joiner)
 }
 
 export const parse = (filter: string): Array<Filter> => {
