@@ -1,6 +1,6 @@
 {
   "name": "filter-string",
-  "version": "0.2.4",
+  "version": "1.0.0",
   "description": "Parse and stringify RESTFul filter string",
   "main": "lib/index.js",
   "module": "es/index.js",
