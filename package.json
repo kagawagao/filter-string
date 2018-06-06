@@ -83,7 +83,7 @@
     "instrument": false
   },
   "browserslist": "ie >= 10, last 2 Chrome versions, last 2 Firefox versions",
-  "peerDependencies": {
+  "optionalDependencies": {
     "core-js": "^2.5.1"
   }
 }
