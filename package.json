@@ -9,14 +9,14 @@
     "es"
   ],
   "scripts": {
-    "test": "cross-env NODE_ENV=test && nyc ava --verbose",
+    "test": "cross-env NODE_ENV=test nyc ava --verbose",
     "flow": "flow",
     "lint": "eslint ./src",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "prepublishOnly": "npm run flow && npm run lint && npm run test",
-    "build": "cross-env NODE_ENV=production && npm run compile && npm run compile:es && rollup -c",
-    "compile": "babel src -d lib --presets=env,stage-0,flow --plugins=add-module-exports",
-    "compile:es": "babel src -d es",
+    "build": "npm run compile && npm run compile:es && rollup -c",
+    "compile": "cross-env NODE_ENV=production babel src -d lib --presets=@babel/preset-env,@babel/preset-flow --plugins=add-module-exports",
+    "compile:es": "cross-env NODE_ENV=production babel src -d es",
     "prepare": "npm run build"
   },
   "repository": {
@@ -37,38 +37,39 @@
   },
   "homepage": "https://github.com/kagawagao/filter-string#readme",
   "devDependencies": {
-    "ava": "^0.25.0",
-    "babel-cli": "^6.26.0",
-    "babel-eslint": "^8.2.3",
-    "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-plugin-istanbul": "^4.1.6",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-flow": "^6.23.0",
-    "babel-preset-stage-0": "^6.24.1",
-    "babel-register": "^6.26.0",
-    "coveralls": "^3.0.1",
-    "cross-env": "^5.1.6",
-    "eslint": "^4.19.1",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-flowtype": "^2.48.0",
-    "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-node": "^5.2.1",
-    "eslint-plugin-promise": "^3.8.0",
-    "eslint-plugin-standard": "^3.1.0",
-    "flow-bin": "^0.60.1",
-    "nyc": "^11.8.0",
-    "rollup": "^0.52.3",
-    "rollup-plugin-babel": "^3.0.4",
-    "rollup-plugin-node-resolve": "^3.3.0",
-    "rollup-plugin-uglify": "^2.0.1"
+    "@babel/cli": "^7.2.3",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "ava": "^1.2.1",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-add-module-exports": "^1.0.0",
+    "babel-plugin-istanbul": "^5.1.0",
+    "coveralls": "^3.0.2",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.13.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-flowtype": "^3.4.1",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "flow-bin": "^0.93.0",
+    "nyc": "^13.2.0",
+    "rollup": "^1.1.2",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-terser": "^4.0.4"
   },
   "ava": {
     "files": [
       "test/*.test.js"
     ],
-    "babel": "inherit",
+    "sources": [
+      "src/*.js"
+    ],
     "require": [
-      "babel-register"
+      "@babel/register"
     ]
   },
   "engines": {
@@ -77,12 +78,11 @@
   },
   "nyc": {
     "require": [
-      "babel-register"
+      "@babel/register"
     ],
     "sourceMap": false,
     "instrument": false
   },
-  "browserslist": "ie >= 10, last 2 Chrome versions, last 2 Firefox versions",
   "optionalDependencies": {
     "core-js": "^2.5.1"
   }

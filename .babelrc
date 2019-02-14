@@ -3,17 +3,13 @@
     "development": {
       "presets": [
         [
-          "env",
+          "@babel/preset-env",
           {
             "modules": false,
-            "target": {
-              "node": 4
-            },
             "useBuiltIns": "usage"
           }
         ],
-        "stage-0",
-        "flow"
+        "@babel/preset-flow"
       ],
       "plugins": [
         "add-module-exports"
@@ -23,16 +19,12 @@
     "test": {
       "presets": [
         [
-          "env",
+          "@babel/preset-env",
           {
-            "target": {
-              "node": 4
-            },
             "useBuiltIns": "usage"
           }
         ],
-        "stage-0",
-        "flow"
+        "@babel/preset-flow"
       ],
       "plugins": [
         "add-module-exports",
@@ -43,17 +35,13 @@
     "production": {
       "presets": [
         [
-          "env",
+          "@babel/preset-env",
           {
             "modules": false,
-            "target": {
-              "node": 4
-            },
             "useBuiltIns": "usage"
           }
         ],
-        "stage-0",
-        "flow"
+        "@babel/preset-flow"
       ],
       "plugins": [
         "add-module-exports"

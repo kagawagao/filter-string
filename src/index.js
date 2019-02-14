@@ -26,7 +26,7 @@ export const stringify = (filters: Array<Filter>, options: Option = {}): string 
 
   const joiner: string = ` ${logicOp} `
 
-  return filters.filter(({key, op, value}) => isValid(key) && isValid(op) && isValid(value)).map(({ key, value, op }) => `${key} ${op} ${value}`).join(joiner)
+  return filters.filter(({ key, op, value }) => isValid(key) && isValid(op) && isValid(value)).map(({ key, value, op }) => `${key} ${op} ${value}`).join(joiner)
 }
 
 export const parse = (filter: string): Array<Filter> => {
@@ -59,7 +59,7 @@ export const parse = (filter: string): Array<Filter> => {
         isVal = false
         isKey = false
         isOp = false
-        filters.push({...temp})
+        filters.push({ ...temp })
         temp.key = ''
         temp.op = ''
         temp.value = ''
