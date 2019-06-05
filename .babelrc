@@ -6,14 +6,13 @@
           "@babel/preset-env",
           {
             "modules": false,
+            "corejs": 3,
             "useBuiltIns": "usage"
           }
         ],
         "@babel/preset-flow"
       ],
-      "plugins": [
-        "add-module-exports"
-      ],
+      "plugins": ["add-module-exports"],
       "comments": false
     },
     "test": {
@@ -21,15 +20,13 @@
         [
           "@babel/preset-env",
           {
+            "corejs": 3,
             "useBuiltIns": "usage"
           }
         ],
         "@babel/preset-flow"
       ],
-      "plugins": [
-        "add-module-exports",
-        "istanbul"
-      ],
+      "plugins": ["add-module-exports", "istanbul"],
       "comments": false
     },
     "production": {
@@ -38,14 +35,13 @@
           "@babel/preset-env",
           {
             "modules": false,
+            "corejs": 3,
             "useBuiltIns": "usage"
           }
         ],
         "@babel/preset-flow"
       ],
-      "plugins": [
-        "add-module-exports"
-      ],
+      "plugins": ["add-module-exports"],
       "comments": false
     }
   }
