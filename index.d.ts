@@ -15,7 +15,7 @@ export function stringify(filters: Array<Filter>, options: Option): string;
 
 export function parse(filterStr: string): Array<Filter>;
 
-export default {
-  stringify
-  parse
+declare module "filter-string" {
+  export function stringify(filters: Array<Filter>, options: Option): string;
+  export function parse(filterStr: string): Array<Filter>;
 }
