@@ -3,7 +3,7 @@ export type LogicOperator = "and" | "or";
 export interface Filter {
   key: string;
   op: string;
-  value: string;
+  value: any;
 }
 
 export interface Option {
@@ -15,7 +15,7 @@ export function stringify(filters: Array<Filter>, options: Option): string;
 
 export function parse(filterStr: string): Array<Filter>;
 
-declare module "filter-string" {
-  export function stringify(filters: Array<Filter>, options: Option): string;
-  export function parse(filterStr: string): Array<Filter>;
+export default {
+  stringify
+  parse
 }
