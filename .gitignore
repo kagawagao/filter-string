@@ -1,14 +1,5 @@
-# Packages
-node_modules/
-
-# Mac
-.DS_STORE
-
-# build
-lib/
-es/
-
-# coverage
-.nyc_output/
-coverage/
-.coveralls.yml
+node_modules
+coverage
+es
+lib
+*.d.ts

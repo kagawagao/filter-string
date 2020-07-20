@@ -1,9 +1,2 @@
-node_modules/
-
-lib/
-es/
-dist/
-
-flow-typed
-
-*.d.ts
+lib
+es
