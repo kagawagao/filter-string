@@ -80,10 +80,16 @@ test('Should be stringified rightly', () => {
   expect($filter4).toBe('')
 
   const filters5 = [{}]
-  // eslint-disable-next-line
-  // @ts-expect-error
   const $filter5 = filterString.stringify(filters5)
   expect($filter5).toBe('')
+  // normally
+  const filters6 = {
+    a: '1',
+    b: 2,
+    c: [3, 4],
+  }
+  const $filter6 = filterString.stringify(filters6)
+  expect($filter6).toBe('a eq 1 and b eq 2 and c eq 3,4')
 })
 
 test('Should throw error if Logic Operator not support', () => {

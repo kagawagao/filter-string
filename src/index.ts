@@ -2,6 +2,7 @@ export type LogicOperator = 'and' | 'or'
 
 const defaultOpts: Option = {
   op: 'and',
+  itemOp: 'eq',
 }
 
 const isValid = (str: any): boolean => {
@@ -18,10 +19,13 @@ export interface Filter {
 
 export interface Option {
   op?: LogicOperator
+  itemOp?: string
   [key: string]: any
 }
 
-export function stringify(filters: Array<Filter>, options?: Option) {
+type Filters = Filter[] | Record<string, any>
+
+export function stringify(filters: Filters, options?: Option) {
   if (!filters) {
     return ''
   }
@@ -30,7 +34,7 @@ export function stringify(filters: Array<Filter>, options?: Option) {
     ...options,
   }
 
-  const { op: logicOp } = opts
+  const { op: logicOp, itemOp } = opts
 
   if (!LOGIC_OPERATORS.find((op) => op === logicOp)) {
     throw new TypeError(
@@ -40,7 +44,15 @@ export function stringify(filters: Array<Filter>, options?: Option) {
 
   const joiner = ` ${logicOp} `
 
-  return filters
+  const newFilters = Array.isArray(filters)
+    ? filters
+    : Object.entries(filters).map(([key, value]) => ({
+        key,
+        value,
+        op: itemOp,
+      }))
+
+  return newFilters
     .filter(
       ({ key, op, value }) => isValid(key) && isValid(op) && isValid(value)
     )
@@ -93,4 +105,9 @@ export function parse(filter: string) {
   })
 
   return filters
+}
+
+export default {
+  stringify,
+  parse,
 }
